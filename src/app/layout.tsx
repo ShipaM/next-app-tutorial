@@ -27,7 +27,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen flex flex-col">
+          <header style={{ background: "lightblue", padding: "1rem" }}>
+            Header
+          </header>
+          <main className="flex-1">{children}</main>
+
+          <footer
+            style={{ background: "darkblue", padding: "1rem", color: "white" }}
+          >
+            Footer
+          </footer>
+        </div>
       </body>
     </html>
   );
