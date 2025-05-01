@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import { useState } from "react";
 
 const navLinks = [
   {
@@ -18,7 +18,10 @@ const navLinks = [
   },
 ];
 const Authlayout = ({ children }: { children: React.ReactNode }) => {
+  const [input, setInput] = useState("");
+
   const pathname = usePathname();
+
   return (
     <div>
       {navLinks.map((link) => {
@@ -35,6 +38,14 @@ const Authlayout = ({ children }: { children: React.ReactNode }) => {
           </Link>
         );
       })}
+      <div className="p-8 bg-amber-600">
+        <input
+          placeholder="Layout Input..."
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </div>
       <div className="p-8 bg-amber-100">{children}</div>
     </div>
   );
