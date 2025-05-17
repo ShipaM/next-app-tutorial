@@ -32,7 +32,7 @@ export const ErrorWrapper = ({ children }: ErrorWrapperProps) => {
   return (
     <div className="flex flex-col rounded-lg mt-8 relative p-4 border border-gray-300 ">
       <div className="absolute top-0 left-4 -translate-y-1/2">
-        <ErrorSimulator message="Simulated error in root layout" />;
+        <ErrorSimulator message="Simulated error in root layout" />
       </div>
       {children}
     </div>
